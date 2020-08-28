@@ -84,10 +84,10 @@ $ git fetch git://github.com/raspberrypi/linux rpi-5.8.y:refs/remotes/official-u
 git co master
 >> git remote -v
 
-official-upstream       git://github.com/Freescale/meta-freescale (fetch)
-official-upstream       git://github.com/Freescale/meta-freescale (push)
-origin  git@github.com:RobertBerger/meta-freescale.git (fetch)
-origin  git@github.com:RobertBerger/meta-freescale.git (push)
+official-upstream       https://github.com/raspberrypi/linux (fetch)
+official-upstream       https://github.com/raspberrypi/linux (push)
+origin  git@github.com:RobertBerger/raspberrypi-linux.git (fetch)
+origin  git@github.com:RobertBerger/raspberrypi-linux.git (push)
 
 >> git fetch official-upstream
 remote: Counting objects: 4043, done.
@@ -95,16 +95,13 @@ remote: Compressing objects: 100% (1273/1273), done.
 remote: Total 4043 (delta 3130), reused 3632 (delta 2727)
 Receiving objects: 100% (4043/4043), 721.50 KiB | 402.00 KiB/s, done.
 Resolving deltas: 100% (3130/3130), completed with 502 local objects.
-From git://git://github.com/Freescale/meta-freescale
-   62591d9..e758547  master     -> official-upstream/master
- + 2942327...a382678 master-next -> official-upstream/master-next  (forced update)
-   a3fa5ce..6a1f33c  morty      -> official-upstream/morty
+...
 ---
 
 7) My own branch:
 git co master
-git co official-upstream/dunfell
-git checkout -b 2020-08-28-dunfell
+git co official-upstream/rpi-5.8.y
+git checkout -b rpi-5.8.y-2020-08-28
 git co master
 cd my-scripts
 ./push-all-to-github.sh
