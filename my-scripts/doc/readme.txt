@@ -19,63 +19,66 @@ git push -u origin master
 3) use my repo
 
 mv raspberrypi-linux raspberrypi-linux.ori
-git clone git@github.com:RobertBerger/meta-freescale.git
+git clone git@github.com:RobertBerger/raspberrypi-linux.git
 
 4) add upstream
 
-cd meta-freescale
+cd raspberrypi-linux
 
-git remote add official-upstream git://github.com/Freescale/meta-freescale
+git remote add official-upstream https://github.com/raspberrypi/linux
 
 $ git fetch official-upstream
 
 warning: no common commits
-remote: Enumerating objects: 72, done.
-remote: Counting objects: 100% (72/72), done.
-remote: Compressing objects: 100% (44/44), done.
-remote: Total 33435 (delta 34), reused 47 (delta 28), pack-reused 33363
-Receiving objects: 100% (33435/33435), 42.65 MiB | 9.37 MiB/s, done.
-Resolving deltas: 100% (18856/18856), done.
-From git://github.com/Freescale/meta-freescale
- * [new branch]        dunfell     -> official-upstream/dunfell
- * [new branch]        master      -> official-upstream/master
- * [new branch]        master-next -> official-upstream/master-next
- * [new branch]        morty       -> official-upstream/morty
- * [new branch]        pyro        -> official-upstream/pyro
- * [new branch]        rocko       -> official-upstream/rocko
- * [new branch]        sumo        -> official-upstream/sumo
- * [new branch]        thud        -> official-upstream/thud
- * [new branch]        warrior     -> official-upstream/warrior
- * [new branch]        zeus        -> official-upstream/zeus
- * [new tag]           2.1         -> 2.1
- * [new tag]           2.2         -> 2.2
-
+remote: Enumerating objects: 71, done.
+remote: Counting objects: 100% (71/71), done.
+remote: Compressing objects: 100% (54/54), done.
+remote: Total 8222752 (delta 39), reused 32 (delta 17), pack-reused 8222681
+Receiving objects: 100% (8222752/8222752), 2.38 GiB | 10.00 MiB/s, done.
+Resolving deltas: 100% (6864021/6864021), done.
+From https://github.com/raspberrypi/linux
+ * [new branch]      JamesH65_axiperf_doc            -> official-upstream/JamesH65_axiperf_doc
+ * [new branch]      avs2                            -> official-upstream/avs2
+ * [new branch]      hdmi_audio_sink                 -> official-upstream/hdmi_audio_sink
+ * [new branch]      legacy_screen_blanking_update   -> official-upstream/legacy_screen_blanking_update
+ * [new branch]      linux_stable                    -> official-upstream/linux_stable
+ * [new branch]      master                          -> official-upstream/master
+ * [new branch]      next                            -> official-upstream/next
+ * [new branch]      overscan_cursor                 -> official-upstream/overscan_cursor
+ * [new branch]      pull/2638/head                  -> official-upstream/pull/2638/head
+ * [new branch]      pull/2922/head                  -> official-upstream/pull/2922/head
+ * [new branch]      rpi-3.10.y                      -> official-upstream/rpi-3.10.y
+ * [new branch]      rpi-3.10.y-next                 -> official-upstream/rpi-3.10.y-next
+ * [new branch]      rpi-3.11.y                      -> official-upstream/rpi-3.11.y
+ * [new branch]      rpi-3.12.y                      -> official-upstream/rpi-3.12.y
+ * [new branch]      rpi-3.13.y                      -> official-upstream/rpi-3.13.y
+ * [new branch]      rpi-3.13.y-next                 -> official-upstream/rpi-3.13.y-next
+...
+* [new branch]      rpi-5.8.y                       -> official-upstream/rpi-5.8.y
+ * [new branch]      rpi-patches                     -> official-upstream/rpi-patches
+ * [new branch]      rpi-r.9.y                       -> official-upstream/rpi-r.9.y
+ * [new tag]         raspberrypi-kernel_1.20180313-1 -> raspberrypi-kernel_1.20180313-1
+ * [new tag]                   raspberrypi-kernel_1.20160506-1 -> raspberrypi-kernel_1.20160506-1
+ * [new tag]                   raspberrypi-kernel_1.20160512-1 -> raspberrypi-kernel_1.20160512-1
+ * [new tag]                   raspberrypi-kernel_1.20160523-1 -> raspberrypi-kernel_1.20160523-1
+ * [new tag]                   raspberrypi-kernel_1.20160620-1 -> raspberrypi-kernel_1.20160620-1
+ * [new tag]                   raspberrypi-kernel_1.20160921-1 -> raspberrypi-kernel_1.20160921-1
+ * [new tag]                   raspberrypi-kernel_1.20161020-1 -> raspberrypi-kernel_1.20161020-1
+...
 
 $ git branch -a
 
 * master
-  remotes/official-upstream/dunfell
-  remotes/official-upstream/master
-  remotes/official-upstream/master-next
-  remotes/official-upstream/morty
-  remotes/official-upstream/pyro
-  remotes/official-upstream/rocko
-  remotes/official-upstream/sumo
-  remotes/official-upstream/thud
-  remotes/official-upstream/warrior
-  remotes/official-upstream/zeus
-  remotes/origin/HEAD -> origin/master
-  remotes/origin/master
-
+  remotes/official-upstream/rpi-5.5.y
+  remotes/official-upstream/rpi-5.6.y
+  remotes/official-upstream/rpi-5.7.y
+  remotes/official-upstream/rpi-5.8.y
 
 5) use specific upstream branch/commit and make own branch
 
 syntax: git fetch url-to-repo branchname:refs/remotes/origin/branchname
 
-$ git fetch git://github.com/Freescale/meta-freescale dunfell:refs/remotes/origin/dunfell
-
-From git://github.com/Freescale/meta-freescale
- * [new branch]        dunfell    -> origin/dunfell
+$ git fetch git://github.com/raspberrypi/linux rpi-5.8.y:refs/remotes/official-upstream/rpi-5.8.y
 
 6) Update from upstream:
 git co master
