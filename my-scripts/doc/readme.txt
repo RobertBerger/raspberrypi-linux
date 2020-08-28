@@ -2,9 +2,9 @@
 
 2) add my-scripts dir
 
-cd meta-freescale
+cd raspberrypi-linux
 
-echo "# meta-freescale fork" >> README.md
+echo "# raspberrypi/linux fork" >> README.md
 
 git init
 
@@ -12,13 +12,13 @@ git add .
 
 git commit -m "first commit"
 
-git remote add origin git@github.com:RobertBerger/meta-freescale.git
+git remote add origin git@github.com:RobertBerger/raspberrypi-linux.git
 
 git push -u origin master
 
 3) use my repo
 
-mv meta-freescale meta-freescale.ori
+mv raspberrypi-linux raspberrypi-linux.ori
 git clone git@github.com:RobertBerger/meta-freescale.git
 
 4) add upstream
